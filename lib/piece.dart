@@ -9,7 +9,7 @@ class Piece {
 
   List<int> position = [];
 
-  void initPosition() {
+  void init() {
     List<int> getInitialPixelPosotion(List<int> position) {
       return [
         (position[0] - (12 * 3)),
@@ -44,7 +44,7 @@ class Piece {
     }
   }
 
-  void movePiece(Direction direction) {
+  void move(Direction direction) {
     switch (direction) {
       case Direction.down:
         for (int i = 0; i < position.length; i++) {
@@ -62,5 +62,9 @@ class Piece {
         }
         break;
     }
+  }
+
+  void rotate() {
+    
   }
 }

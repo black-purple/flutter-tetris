@@ -7,7 +7,7 @@ enum Direction { down, left, right }
 const colCount = 20;
 const rowCount = 12;
 
-const Map<TetroBlock, Color> colors = {
+const Map<TetroBlock, Color> blockColor = {
   TetroBlock.L: Colors.deepOrangeAccent,
   TetroBlock.J: Colors.orange,
   TetroBlock.I: Colors.redAccent,

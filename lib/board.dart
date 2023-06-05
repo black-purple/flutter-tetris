@@ -27,14 +27,14 @@ class _GameBoardState extends State<GameBoard> {
   Piece currentPiece = Piece(type: TetroBlock.J);
 
   void startGame() {
-    currentPiece.initPosition();
+    currentPiece.init();
 
     Timer.periodic(
       const Duration(milliseconds: 500),
       (timer) {
         setState(() {
           checkLanding();
-          currentPiece.movePiece(Direction.down);
+          currentPiece.move(Direction.down);
         });
       },
     );
@@ -54,6 +54,8 @@ class _GameBoardState extends State<GameBoard> {
       }
 
       if (row >= colCount || col < 0 || col >= rowCount) {
+        return true;
+      } else if (col > 0 && row > 0 && gameBoard[row][col] != null) {
         return true;
       }
     }
@@ -79,7 +81,7 @@ class _GameBoardState extends State<GameBoard> {
     TetroBlock randomBlock =
         TetroBlock.values[rand.nextInt(TetroBlock.values.length)];
     currentPiece = Piece(type: randomBlock);
-    currentPiece.initPosition();
+    currentPiece.init();
   }
 
   @override
@@ -103,12 +105,20 @@ class _GameBoardState extends State<GameBoard> {
               ),
               itemCount: colCount * rowCount,
               itemBuilder: (_, index) {
+                int row = (index / rowCount).floor();
+                int col = index % rowCount;
+
                 if (currentPiece.position.contains(index)) {
                   return Pixel(
-                    color: colors[currentPiece.type],
+                    color: blockColor[currentPiece.type],
                   );
+                } else if (gameBoard[row][col] != null) {
+                  return Pixel(
+                    color: blockColor[gameBoard[row][col]],
+                  );
+                } else {
+                  return const Pixel();
                 }
-                return const Pixel();
               },
             ),
           ),
@@ -122,8 +132,9 @@ class _GameBoardState extends State<GameBoard> {
                   onTap: () => setState(
                     () {
                       HapticFeedback.lightImpact();
-                      checkCollision(Direction.left);
-                      currentPiece.movePiece(Direction.left);
+                      if (!checkCollision(Direction.left)) {
+                        currentPiece.move(Direction.left);
+                      }
                     },
                   ),
                 ),
@@ -132,8 +143,9 @@ class _GameBoardState extends State<GameBoard> {
                   onTap: () => setState(
                     () {
                       HapticFeedback.lightImpact();
-                      checkCollision(Direction.down);
-                      currentPiece.movePiece(Direction.down);
+                      if (!checkCollision(Direction.left)) {
+                        currentPiece.move(Direction.left);
+                      }
                     },
                   ),
                 ),
@@ -142,8 +154,9 @@ class _GameBoardState extends State<GameBoard> {
                   onTap: () => setState(
                     () {
                       HapticFeedback.lightImpact();
-                      checkCollision(Direction.right);
-                      currentPiece.movePiece(Direction.right);
+                      if (!checkCollision(Direction.right)) {
+                        currentPiece.move(Direction.right);
+                      }
                     },
                   ),
                 ),
