@@ -1,39 +1,54 @@
 import 'package:flutter_tetris/values.dart';
 
 class Piece {
-  Tetromino type;
-  Piece({required this.type});
+  final TetroBlock type;
+
+  Piece({
+    required this.type,
+  });
 
   List<int> position = [];
 
   void initPosition() {
+    List<int> getInitialPixelPosotion(List<int> position) {
+      return [
+        (position[0] - (12 * 3)),
+        (position[1] - (12 * 3)),
+        (position[2] - (12 * 3)),
+        (position[3] - (12 * 3)),
+      ];
+    }
+
     switch (type) {
-      case Tetromino.L:
-        position = [-26, -16, -6, -5];
+      case TetroBlock.L:
+        position = getInitialPixelPosotion([5, 17, 29, 30]);
         break;
-      case Tetromino.J:
-        position = [];
+      case TetroBlock.J:
+        position = getInitialPixelPosotion([6, 18, 30, 29]);
         break;
-      case Tetromino.O:
-        position = [];
+      case TetroBlock.I:
+        position = getInitialPixelPosotion([5, 17, 29, 41]);
         break;
-      case Tetromino.S:
-        position = [];
+      case TetroBlock.O:
+        position = getInitialPixelPosotion([5, 6, 17, 18]);
         break;
-      case Tetromino.Z:
-        position = [];
+      case TetroBlock.S:
+        position = getInitialPixelPosotion([5, 6, 16, 17]);
         break;
-      case Tetromino.T:
-        position = [];
+      case TetroBlock.Z:
+        position = getInitialPixelPosotion([4, 5, 17, 18]);
+        break;
+      case TetroBlock.T:
+        position = getInitialPixelPosotion([5, 17, 18, 29]);
         break;
     }
   }
 
-  void movePiece(Direction direaction) {
-    switch (direaction) {
+  void movePiece(Direction direction) {
+    switch (direction) {
       case Direction.down:
         for (int i = 0; i < position.length; i++) {
-          position[i] += rows;
+          position[i] += rowCount;
         }
         break;
       case Direction.left:
