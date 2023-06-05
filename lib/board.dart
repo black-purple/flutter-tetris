@@ -3,9 +3,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_tetris/control_button.dart';
-import 'package:flutter_tetris/piece.dart';
-import 'package:flutter_tetris/pixel.dart';
+import 'package:flutter_tetris/widgets/control_button.dart';
+import 'package:flutter_tetris/widgets/piece.dart';
+import 'package:flutter_tetris/widgets/pixel.dart';
 import 'package:flutter_tetris/values.dart';
 
 List<List<TetroBlock?>> gameBoard = List.generate(
