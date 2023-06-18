@@ -9,6 +9,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get: ^4.6.5
+  intl: ^0.18.1
+  path: ^1.8.3
+  responsive_sizer: ^3.1.1
+  sqflite: ^2.2.8+4
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +22,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/logo.png
+  
+  fonts:
+
+    - family: VT323
+      fonts:
+        - asset: assets/fonts/VT323.ttf
