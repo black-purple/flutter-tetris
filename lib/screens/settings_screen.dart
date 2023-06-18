@@ -30,15 +30,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   const Text(
                     "Difficulty",
                     style: TextStyle(
-                      fontFamily: "VT323",
-                      fontSize: 30,
+                      fontSize: 15,
                       color: Colors.white,
                     ),
                   ),
                   DropdownButton(
                     dropdownColor: Colors.grey.shade900,
                     value: selectedValue,
-                    style: const TextStyle(fontFamily: "VT323", fontSize: 20),
+                    style: const TextStyle(fontSize: 20),
                     items: Difficulty.values
                         .map((val) => val.name)
                         .toList()

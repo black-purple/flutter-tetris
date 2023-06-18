@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.6.5
+  get_storage: ^2.1.1
   intl: ^0.18.1
   path: ^1.8.3
   responsive_sizer: ^3.1.1
@@ -27,7 +28,9 @@ flutter:
     - assets/images/logo.png
   
   fonts:
-
     - family: VT323
       fonts:
         - asset: assets/fonts/VT323.ttf
+    - family: PressStart2P
+      fonts:
+        - asset: assets/fonts/PressStart2P.ttf

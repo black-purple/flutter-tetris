@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -17,22 +18,23 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 "<",
                 style: TextStyle(
                   color: Colors.orangeAccent,
-                  fontFamily: "VT323",
-                  fontSize: 40,
+                  fontSize: 30,
                 ),
               ),
             )
           : null,
-      title: Text(
-        title,
-        style: TextStyle(
-          color: Colors.orangeAccent,
-          fontFamily: "VT323",
-          fontSize: title != "TETRIS" ? 50 : 100,
+      title: Padding(
+        padding: EdgeInsets.only(top: title == "TETRIS" ? 5.h : 0),
+        child: Text(
+          title,
+          style: TextStyle(
+            color: Colors.orangeAccent,
+            fontSize: title != "TETRIS" ? 25 : 60,
+          ),
         ),
       ),
       centerTitle: true,
-      toolbarHeight: title != "TETRIS" ? 100 : 200,
+      toolbarHeight: title != "TETRIS" ? 100 : 250,
       backgroundColor: Colors.transparent,
       elevation: 0,
     );

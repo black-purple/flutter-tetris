@@ -51,12 +51,14 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Text(
-            "version 1.0",
-            style: TextStyle(
-              color: Colors.white,
-              fontFamily: "VT323",
-              fontSize: 20,
+          Padding(
+            padding: EdgeInsets.only(bottom: 3.h),
+            child: const Text(
+              "version 1.0",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 10,
+              ),
             ),
           ),
         ],

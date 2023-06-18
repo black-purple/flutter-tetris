@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tetris/controllers/difficulty_controller.dart';
 import 'package:flutter_tetris/screens/home_screen.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   runApp(const MainApp());
 }
 
@@ -20,6 +22,7 @@ class MainApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: Colors.orangeAccent,
           primarySwatch: Colors.orange,
+          fontFamily: "PressStart2P",
         ),
         debugShowCheckedModeBanner: false,
         home: const HomeScreen(),

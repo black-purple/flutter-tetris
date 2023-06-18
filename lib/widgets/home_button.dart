@@ -25,7 +25,7 @@ class HomeButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: const TextStyle(fontSize: 30, fontFamily: "VT323"),
+          style: const TextStyle(fontSize: 20),
         ),
       ),
     );

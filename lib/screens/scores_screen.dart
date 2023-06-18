@@ -48,7 +48,6 @@ class _ScoresScreenState extends State<ScoresScreen> {
                   "Match ${index + 1}",
                   style: const TextStyle(
                     color: Colors.white,
-                    fontFamily: "VT323",
                     fontSize: 35,
                   ),
                 ),
@@ -62,7 +61,6 @@ class _ScoresScreenState extends State<ScoresScreen> {
                       scores[index]['score'],
                       style: TextStyle(
                         color: Colors.grey.shade600,
-                        fontFamily: "VT323",
                         fontSize: 20,
                       ),
                     ),
@@ -70,7 +68,6 @@ class _ScoresScreenState extends State<ScoresScreen> {
                       "${DateFormat.yMMMd().format(DateTime.parse(scores[index]['date']))} ${DateFormat.Hm().format(DateTime.parse(scores[index]['date']))}",
                       style: TextStyle(
                         color: Colors.grey.shade600,
-                        fontFamily: "VT323",
                         fontSize: 20,
                       ),
                     )

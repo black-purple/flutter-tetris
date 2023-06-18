@@ -74,7 +74,7 @@ class _GameBoardState extends State<GameBoard> {
                   children: [
                     Text(
                       "Game Over",
-                      style: TextStyle(fontSize: 38, color: Colors.red),
+                      style: TextStyle(fontSize: 30, color: Colors.red),
                     ),
                   ],
                 ),
@@ -131,6 +131,7 @@ class _GameBoardState extends State<GameBoard> {
     isGameOver = false;
     currentScore = 0;
 
+    Navigator.pop(context);
     createNewPiece();
     startGame();
   }
