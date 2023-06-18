@@ -19,8 +19,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
       backgroundColor: Colors.black,
       appBar: const CustomAppBar(title: "SETTINGS"),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
-        child: Column(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -58,9 +58,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     },
                   ),
                 ],
-              )
-            ]),
-      ),
+              ),
+            ],
+          )),
     );
   }
 }
