@@ -4,6 +4,8 @@ enum TetroBlock { L, J, I, O, S, Z, T }
 
 enum Direction { down, left, right }
 
+enum Difficulty { easy, medium, hard, legend }
+
 const colCount = 20;
 const rowCount = 12;
 
