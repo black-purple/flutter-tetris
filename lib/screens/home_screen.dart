@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_tetris/screens/board.dart';
+import 'package:flutter_tetris/screens/board_screen.dart';
 import 'package:flutter_tetris/screens/scores_screen.dart';
 import 'package:flutter_tetris/screens/settings_screen.dart';
 import 'package:flutter_tetris/widgets/appbar.dart';

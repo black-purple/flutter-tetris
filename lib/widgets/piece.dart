@@ -1,4 +1,4 @@
-import 'package:flutter_tetris/screens/board.dart';
+import 'package:flutter_tetris/screens/board_screen.dart';
 import 'package:flutter_tetris/values.dart';
 
 class Piece {
