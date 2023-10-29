@@ -23,6 +23,7 @@ class MainApp extends StatelessWidget {
           primaryColor: Colors.orangeAccent,
           primarySwatch: Colors.orange,
           fontFamily: "PressStart2P",
+          useMaterial3: false,
         ),
         debugShowCheckedModeBanner: false,
         home: const HomeScreen(),

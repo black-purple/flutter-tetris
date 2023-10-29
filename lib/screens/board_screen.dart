@@ -269,23 +269,43 @@ class _GameBoardState extends State<GameBoard> {
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
-                  "Score: ",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
+                const Expanded(
+                  flex: 2,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Text(
+                      "Score: ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    ),
                   ),
                 ),
-                Text(
-                  "$currentScore",
-                  style: TextStyle(
-                    color: getScoreColor(),
-                    fontSize: 20,
+                Expanded(
+                  flex: 4,
+                  child: Text(
+                    "$currentScore",
+                    style: TextStyle(
+                      color: getScoreColor(),
+                      fontSize: 15,
+                    ),
                   ),
                 ),
+                TextButton.icon(
+                  onPressed: resetGame,
+                  icon: const Icon(
+                    Icons.exit_to_app_rounded,
+                    color: Colors.redAccent,
+                  ),
+                  label: const Text(
+                    "Quit",
+                    style: TextStyle(color: Colors.redAccent),
+                  ),
+                )
               ],
             ),
           ),
